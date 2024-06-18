@@ -12,7 +12,7 @@
     - [Step 3: Integrate Behaviors with Duck](#Step-3:-Integrate-Behaviors-with-Duck)
 7. [Summary](#summary)
 
-## Introduction
+## Introduction to Design Patterns
 
 Design Patterns are typical solutions to common problems in software design. They are like pre-defined templates that can be adapted to solve design problems in different situations. Instead of reinventing the wheel, developers can use design patterns to save time and avoid common pitfalls.
 
@@ -30,7 +30,7 @@ Design Patterns are typical solutions to common problems in software design. The
 3. Maintainability: Adding new behaviors doesn't require changing the existing duck classes.
 
 
-## Duck Example in C++ :
+## Duck Example in C++
 
 ```cpp
 #include <iostream>
@@ -84,16 +84,17 @@ public:
 
 ## Problems with This Approach
 
-1.Inflexible Design: Adding or modifying behavior isn't easy. For example, if you want a rubber duck to squeak instead of quack, you need to override the quack method in the RubberDuck class.
-2. Maintenance Issue: If a new type of duck or new behavior is introduced, you need to modify existing code, risking errors and making maintenance harder.
-3.Code Duplication: Common behaviors (like quack and swim) are duplicated across different duck types.
+1. Inflexible Design: Adding or modifying behavior isn't easy. For example, if you want a rubber duck to squeak instead of quack, you need to override the quack method in the RubberDuck class.
+2. Code Duplication: Common behaviors (like quack and swim) are duplicated across different duck types.
+3. Maintenance Issue: If a new type of duck or new behavior is introduced, you need to modify existing code, risking errors and making maintenance harder.
+  
 
 
 
-## Solution Using Design Patterns :
+## Solution Using Design Patterns
 we can use the Strategy Pattern. This pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. It lets the algorithm vary independently from the clients that use it.
 
-### Step 1: Define Behaviors :
+### Step 1: Define Behaviors
 
 ```cpp
 // Interface for QuackBehavior
@@ -109,7 +110,7 @@ public:
 };
 ```
 
-### Step 2: Implement Specific Behaviors :
+### Step 2: Implement Specific Behaviors
 ```cpp
 // Implementation of QuackBehavior for normal quacking
 class Quack : public QuackBehavior {
@@ -225,7 +226,7 @@ public:
 };
 ```
 
-## Summary:
+## Summary
 * Design Patterns: Reusable solutions to common problems.
 * Strategy Pattern: Encapsulates behaviors (e.g., quacking, flying) and makes them interchangeable.
 * Composition Over Inheritance: Use objects to achieve flexible code.
